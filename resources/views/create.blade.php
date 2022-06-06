@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Admin Panel</title>
-
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -166,21 +165,9 @@
                 </div>
             </div>
         </div>
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
-
-        <!-- Main Footer -->
-        <footer class="main-footer">
-        </footer>
     </div>
 </div>
 </body>
-<!-- Main Footer -->
-<footer class="main-footer">
-</footer>
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
 <script src="{{ asset('template/plugins/jquery/jquery.min.js')}}"></script>
@@ -190,7 +177,6 @@
 <script src="{{ asset('template/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('template/dist/js/adminlte.js')}}"></script>
-
 <!-- PAGE PLUGINS -->
 <!-- jQuery Mapael -->
 <script src="{{ asset('template/plugins/jquery-mousewheel/jquery.mousewheel.js')}}"></script>
@@ -199,9 +185,15 @@
 <script src="{{ asset('template/plugins/jquery-mapael/maps/usa_states.min.js')}}"></script>
 <!-- ChartJS -->
 <script src="{{ asset('template/plugins/chart.js/Chart.min.js')}}"></script>
-
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('template/dist/js/pages/dashboard2.js')}}"></script>
+<script>
+    let collection = document.getElementsByClassName('disclaimer')
+    for (let name of collection) {
+        console.log(name)
+        name.remove()
+    }
+</script>
 </html>
 
 

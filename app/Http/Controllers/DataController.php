@@ -38,7 +38,7 @@ class DataController extends Controller
         return response()->download(\public_path("images/") . $imageName,
             $imageName,
             [
-                'Cache-Control' => 'max-age=31536000',
+                'Cache-Control' => 'max-age=86400',
             ]
         );
     }
@@ -47,7 +47,7 @@ class DataController extends Controller
         return response()->download(\public_path("sounds/") . $soundName,
             $soundName,
             [
-                'Cache-Control' => 'max-age=31536000',
+                'Cache-Control' => 'max-age=86400',
             ]
         );
     }

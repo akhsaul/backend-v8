@@ -197,24 +197,12 @@
 
                     </tr>
                 @endforeach
-                <!-- Control Sidebar -->
-                <aside class="control-sidebar control-sidebar-dark">
-                    <!-- Control sidebar content goes here -->
-                </aside>
-                <!-- /.control-sidebar -->
-
-                <!-- Main Footer -->
-                <footer class="main-footer">
-                </footer>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
 </body>
-<!-- Main Footer -->
-<footer class="main-footer">
-</footer>
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
 <script src="{{ asset('template/plugins/jquery/jquery.min.js')}}"></script>
@@ -224,7 +212,6 @@
 <script src="{{ asset('template/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('template/dist/js/adminlte.js')}}"></script>
-
 <!-- PAGE PLUGINS -->
 <!-- jQuery Mapael -->
 <script src="{{ asset('template/plugins/jquery-mousewheel/jquery.mousewheel.js')}}"></script>
@@ -233,7 +220,13 @@
 <script src="{{ asset('template/plugins/jquery-mapael/maps/usa_states.min.js')}}"></script>
 <!-- ChartJS -->
 <script src="{{ asset('template/plugins/chart.js/Chart.min.js')}}"></script>
-
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('template/dist/js/pages/dashboard2.js')}}"></script>
+<script>
+    let collection = document.getElementsByClassName('disclaimer')
+    for (let name of collection) {
+        console.log(name)
+        name.remove()
+    }
+</script>
 </html>
