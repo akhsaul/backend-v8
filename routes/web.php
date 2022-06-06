@@ -1,8 +1,7 @@
 <?php
 
-use Illuminate\Foundation\Application;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,22 +13,24 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+    return view('auth.login');
+});*/
 
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
-    'verified',
+    'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
+    Route::get('/', function () {
+        return view('dashboard');
     })->name('dashboard');
+
+    Route::get('/data/{category}', [PostController::class, 'getByCategory']);
+    Route::get('/create/{category}', [PostController::class,'make']);
+    Route::post('/post/{category}', [PostController::class, 'store']);
+    Route::delete('/delete/{id}',[PostController::class,'destroy']);
+    Route::get('/edit/{id}', [PostController::class, 'edit']);
+    Route::put('/update/{id}', [PostController::class, 'update']);
 });
