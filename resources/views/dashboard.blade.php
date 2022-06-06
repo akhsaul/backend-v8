@@ -6,8 +6,7 @@
     <title>Admin Panel</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{ asset('template/plugins/fontawesome-free/css/all.min.css')}}">
     <!-- overlayScrollbars -->
@@ -21,8 +20,7 @@
 
     <!-- Preloader -->
     <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__wobble" src="{{ asset('template/dist/img/AdminLTELogo.png')}}" alt="AdminLTELogo"
-             height="60" width="60">
+        <img class="animation__wobble" src="{{ asset('template/dist/img/AdminLTELogo.png')}}" alt="AdminLTELogo" height="60" width="60">
     </div>
 
     <!-- Navbar -->
@@ -39,11 +37,17 @@
 
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
-
+            
             <li class="nav-item">
                 <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                     <i class="fas fa-expand-arrows-alt"></i>
                 </a>
+            </li>
+            <li class="nav-item">
+                <form action="{{ route('logout') }}" method="post">
+                    @csrf
+                    <button type="submit" class="nav-item">Logout</button>
+                </form>
             </li>
         </ul>
     </nav>
@@ -53,8 +57,7 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="/" class="brand-link">
-            <img src="{{ asset('template/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
-                 class="brand-image img-circle elevation-3" style="opacity: .8">
+            <img src="{{ asset('template/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
             <span class="brand-text font-weight-light">Admin Panel</span>
         </a>
 
@@ -70,8 +73,7 @@
             <!-- SidebarSearch Form -->
             <div class="form-inline">
                 <div class="input-group" data-widget="sidebar-search">
-                    <input class="form-control form-control-sidebar" type="search" placeholder="Search"
-                           aria-label="Search">
+                    <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
                     <div class="input-group-append">
                         <button class="btn btn-sidebar">
                             <i class="fas fa-search fa-fw"></i>
@@ -82,12 +84,11 @@
 
             <!-- Sidebar Menu -->
             <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                    data-accordion="false">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
                     <li class="nav-item menu-open">
-                        <a href="#" class="nav-link active">
+                        <a href="/" class="nav-link active">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>
                                 Dashboard
@@ -112,73 +113,73 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <div class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1 class="m-0">Kategori</h1>
-                    </div><!-- /.col -->
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Resource</li>
-                        </ol>
-                    </div><!-- /.col -->
-                </div><!-- /.row -->
-            </div><!-- /.container-fluid -->
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Kategori</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+              <li class="breadcrumb-item active">Resource</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    <!-- Category -->
+    <div class="container">
+        <div class="row">
+            <div class="card mt-1 col-md-4" style="margin: 5px; ">
+            <img src="images/hewan-kategori.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title ">Hewan</h5>
+                    <p class="card-text"></p>
+                    <a href="/data/Hewan" class="btn btn-primary">Lihat Data</a>
+                </div>
         </div>
-        <!-- /.content-header -->
-        <!-- Category -->
-        <div class="container">
-            <div class="row">
-                <div class="card mt-1 col-md-4" style="margin: 5px; ">
-                    <img src="images/hewan-kategori.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title ">Hewan</h5>
-                        <p class="card-text"></p>
-                        <a href="/data/Hewan" class="btn btn-primary">Lihat Data</a>
-                    </div>
+        <div class="card mt-1 col-md-4" style="margin: 5px; ">
+            <img src="images/buah-kategori.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Buah</h5>
+                    <p class="card-text"></p>
+                    <a href="/data/Buah" class="btn btn-primary">Lihat Data</a>
                 </div>
-                <div class="card mt-1 col-md-4" style="margin: 5px; ">
-                    <img src="images/buah-kategori.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Buah</h5>
-                        <p class="card-text"></p>
-                        <a href="/data/Buah" class="btn btn-primary">Lihat Data</a>
-                    </div>
+        </div>
+        <div class="card mt-1 col-md-4" style="margin: 5px; ">
+            <img src="images/tumbuhan-kategori.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Tumbuhan</h5>
+                    <p class="card-text"></p>
+                    <a href="/data/Tumbuhan" class="btn btn-primary">Lihat Data</a>
                 </div>
-                <div class="card mt-1 col-md-4" style="margin: 5px; ">
-                    <img src="images/tumbuhan-kategori.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Tumbuhan</h5>
-                        <p class="card-text"></p>
-                        <a href="/data/Tumbuhan" class="btn btn-primary">Lihat Data</a>
-                    </div>
-                </div>
-                <div class="card mt-2 col-md-4" style="margin: 5px; ">
-                    <img src="images/benda-kategori.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Benda</h5>
-                        <p class="card-text"></p>
-                        <a href="/data/Benda" class="btn btn-primary">Lihat Data</a>
-                    </div>
+        </div>
+        <div class="card mt-2 col-md-4" style="margin: 5px; ">
+            <img src="images/benda-kategori.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Benda</h5>
+                    <p class="card-text"></p>
+                    <a href="/data/Benda" class="btn btn-primary">Lihat Data</a>
                 </div>
             </div>
         </div>
-
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
-
     </div>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+    </footer>
 </div>
-</body>
-<!-- Main Footer -->
-<footer class="main-footer">
-</footer>
+<!-- ./wrapper -->
+
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
 <script src="{{ asset('template/plugins/jquery/jquery.min.js')}}"></script>
@@ -198,6 +199,9 @@
 <!-- ChartJS -->
 <script src="{{ asset('template/plugins/chart.js/Chart.min.js')}}"></script>
 
+<!-- AdminLTE for demo purposes -->
+<script src="{{ asset('template/dist/js/demo.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('template/dist/js/pages/dashboard2.js')}}"></script>
+</body>
 </html>
