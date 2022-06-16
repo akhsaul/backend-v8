@@ -129,4 +129,11 @@
             </div>
         </div>
     </body>
+    <script>
+        let collection = document.getElementsByClassName('disclaimer')
+        for (let name of collection) {
+            console.log(name)
+            name.remove()
+        }
+    </script>
 </html>

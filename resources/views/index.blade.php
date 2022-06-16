@@ -38,37 +38,10 @@
 
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
-            <!-- Navbar Search -->
-            <li class="nav-item">
-                <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-                    <i class="fas fa-search"></i>
-                </a>
-                <div class="navbar-search-block">
-                    <form class="form-inline">
-                        <div class="input-group input-group-sm">
-                            <input class="form-control form-control-navbar" type="search" placeholder="Search"
-                                   aria-label="Search">
-                            <div class="input-group-append">
-                                <button class="btn btn-navbar" type="submit">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                                    <i class="fas fa-times"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </li>
             <li class="nav-item">
                 <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                     <i class="fas fa-expand-arrows-alt"></i>
                 </a>
-                <li class="nav-item">
-                <form action="{{ route('logout') }}" method="post">
-                    @csrf
-                    <button type="submit" class="nav-item">Logout</button>
-                </form>
             </li>
         </ul>
     </nav>
@@ -80,28 +53,19 @@
         <a href="/" class="brand-link">
             <img src="{{ asset('template/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
                  class="brand-image img-circle elevation-3" style="opacity: .8">
-            <span class="brand-text font-weight-light">AdminLTE 3</span>
+            <span class="brand-text font-weight-light">Admin Panel</span>
         </a>
 
         <!-- Sidebar -->
-        <div class="sidebar">
+         <div class="sidebar">
             <!-- Sidebar user panel (optional) -->
-            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                <div class="info">
-                    <a href="/user/profile" class="d-block">{{ Auth::user()->name }}</a>
-                </div>
-            </div>
-
-            <!-- SidebarSearch Form -->
-            <div class="form-inline">
-                <div class="input-group" data-widget="sidebar-search">
-                    <input class="form-control form-control-sidebar" type="search" placeholder="Search"
-                           aria-label="Search">
-                    <div class="input-group-append">
-                        <button class="btn btn-sidebar">
-                            <i class="fas fa-search fa-fw"></i>
-                        </button>
-                    </div>
+            <div class="user-panel user-end mt-3 pb-3 mb-3">
+                <div class="info" style="display: unset !important;">
+                    <a href="/user/profile" style="margin-left: 5px;">{{ Auth::user()->name }}</a>
+                    <form action="{{ route('logout') }}" method="post" style="float: right !important;">
+                        @csrf
+                        <button type="submit" class="nav-item" style="margin-right: 10px;">Logout</button>
+                    </form>
                 </div>
             </div>
 
@@ -112,19 +76,34 @@
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
                     <li class="nav-item menu-open">
-                        <a href="#" class="nav-link active">
+                        <a href="/" class="nav-link active">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>
-                                Dashboard
+                                Resource
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="/" class="nav-link active">
+                                <a href="/data/Hewan" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Resource</p>
+                                    <p>Data Hewan</p>
                                 </a>
+                                <li class="nav-item">
+                                <a href="/data/Buah" class="nav-link active">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Data Buah</p>
+                                </a>   
+                                <li class="nav-item">
+                                <a href="/data/Tumbuhan" class="nav-link active">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Data Tumbuhan</p>
+                                </a>
+                                <li class="nav-item">
+                                <a href="/data/Benda" class="nav-link active">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Data Benda</p>
+                                </a> 
                             </li>
                         </ul>
                     </li>
